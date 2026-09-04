@@ -231,7 +231,7 @@
       </section>
 
       <!-- PROJECT LAB -->
-      <section id="projects" data-section class="h-svh bg-off-white px-16 py-72 text-black lg:p-80">
+      <section id="projects" data-section class="h-svh bg-off-white px-16 py-72 text-black lg:h-[80svh] lg:min-h-[680px] lg:p-80">
         <div data-ide class="chrome-dot flex h-full min-h-0 flex-col overflow-hidden rounded-8 p-6 shadow-lg ring ring-black-deep">
           <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-4 bg-black text-white ring-1 ring-white/10">
             <div class="flex items-center justify-between gap-16 border-b border-white/10 px-16 py-10 font-mono text-caption-10 uppercase">
@@ -255,10 +255,22 @@
               </nav>
               <div class="flex min-h-0 flex-col">
                 <p data-ide-title class="border-b border-white/10 px-16 py-10 font-mono text-caption-10 uppercase text-white/50">README.MD</p>
-                <div data-ide-code class="min-h-0 flex-1 overflow-auto p-16 font-mono text-caption-20 leading-relaxed text-white/85">
+                <div data-ide-code class="ide-code-text min-h-0 flex-1 overflow-auto px-16 py-6 font-mono leading-normal text-white/85">
                   <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">1</span><span class="text-[#9cdcfe]"># RAG LangChain Lab</span></div>
                   <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">2</span><span>&nbsp;</span></div>
-                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">3</span><span>Hybrid retrieval with measurable quality and inspectable evidence.</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">3</span><span>Verifiable local RAG with inspectable evidence.</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">4</span><span>&nbsp;</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">5</span><span class="text-[#9cdcfe]">## Stack</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">6</span><span>Python / LangChain / ChromaDB / BM25 / RRF / Cross-Encoder</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">7</span><span>&nbsp;</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">8</span><span class="text-[#9cdcfe]">## Pipeline</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">9</span><span>Documents -&gt; Stable chunks -&gt; Incremental index</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">10</span><span>Query -&gt; Dense + BM25 -&gt; RRF -&gt; Rerank</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">11</span><span>Evidence -&gt; Rewrite / Answer / Refuse</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">12</span><span>&nbsp;</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">13</span><span class="text-[#9cdcfe]">## Evaluation</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">14</span><span>Recall@3 60.00% -&gt; 84.62% / MRR 0.5231 -&gt; 0.7564</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">15</span><span>Refusal 20 / 20 / Tests 47 + 11 subtests</span></div>
                 </div>
                 <div class="border-t border-white/10 px-16 py-12 font-mono text-caption-10 uppercase text-white/45">
                   <span class="text-white/70">~/rag-langchain-lab</span>

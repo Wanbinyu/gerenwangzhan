@@ -258,3 +258,22 @@ html[data-theme="dark"] body,
 .theme-dark {
   color: #fff;
 }
+
+.ide-code-text {
+  font-size: 12px;
+}
+
+@supports (zoom: 0.75) {
+  .ide-code-text {
+    font-size: 16px;
+    zoom: 0.75;
+  }
+}
+
+@media (min-width: 64rem) {
+  .ide-code-text {
+    font-size: var(--text-caption-20);
+    line-height: 1.3;
+    zoom: 1;
+  }
+}
