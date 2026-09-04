@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Halyard — the studio file you keep</title>
+    <meta
+      name="description"
+      content="A working studio file: page builder, fetch layer, agent notes, and the decisions already made."
+    />
+    <link rel="icon" href="/mark.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <canvas
+      data-ascii-curtain
+      class="pointer-events-none fixed inset-0 z-50 size-full opacity-0 transition-opacity duration-200"
+    ></canvas>
+
+    <header class="pointer-events-none fixed inset-x-0 top-0 z-40 flex justify-start p-8 lg:justify-center lg:p-16">
+      <nav aria-label="Primary" class="pointer-events-auto">
+        <div class="chrome-dot rounded-8 p-6 shadow-lg ring ring-black-deep lg:p-8">
+          <div class="hidden w-max flex-col gap-4 overflow-hidden rounded-4 bg-black p-4 ring-1 ring-white/10 lg:flex">
+            <ul class="relative flex items-center font-mono text-caption-10 uppercase">
+              <li class="mr-4">
+                <a href="#top" class="flex aspect-square h-30 items-center text-white" aria-label="Home">
+                  <svg viewBox="0 0 32 32" class="size-30" fill="currentColor" aria-hidden="true">
+                    <rect x="2" y="2" width="2" height="28" />
+                    <rect x="6" y="6" width="2" height="20" />
+                    <rect x="10" y="2" width="2" height="28" />
+                    <rect x="14" y="10" width="2" height="12" />
+                    <rect x="18" y="4" width="2" height="24" />
+                    <rect x="22" y="8" width="2" height="16" />
+                    <rect x="26" y="2" width="2" height="28" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a data-nav href="#features" class="relative z-1 flex h-30 items-center whitespace-nowrap rounded-4 px-12 text-white/55 transition-colors duration-300 hover:text-white">
+                  <span data-odometer>FEATURES</span>
+                </a>
+              </li>
+              <li>
+                <a data-nav href="#the-repo" class="relative z-1 flex h-30 items-center whitespace-nowrap rounded-4 px-12 text-white/55 transition-colors duration-300 hover:text-white">
+                  <span data-odometer>THE REPO</span>
+                </a>
+              </li>
+              <li>
+                <a data-nav href="#showcase" class="relative z-1 flex h-30 items-center whitespace-nowrap rounded-4 px-12 text-white/55 transition-colors duration-300 hover:text-white">
+                  <span data-odometer>SHOWCASE</span>
+                </a>
+              </li>
+              <li>
+                <a data-nav href="#faq" class="relative z-1 flex h-30 items-center whitespace-nowrap rounded-4 px-12 text-white/55 transition-colors duration-300 hover:text-white">
+                  <span data-odometer>FAQ</span>
+                </a>
+              </li>
+              <li>
+                <a href="#callout" class="relative z-1 flex h-30 items-center whitespace-nowrap rounded-4 px-12 text-white/55 transition-colors duration-300 hover:text-white">
+                  <span data-odometer>NOTES</span>
+                </a>
+              </li>
+            </ul>
+            <div class="overflow-hidden rounded-2 bg-white/90" style="width: 0; min-width: 100%">
+              <div class="flex w-max font-mono text-caption-10 uppercase tracking-wide text-black animate-marqy-l">
+                <span class="px-12 py-6">HALYARD STUDIO FILE · VITE AND ASTRO · QUIET PRODUCTION · HALYARD STUDIO FILE · </span>
+                <span class="px-12 py-6">HALYARD STUDIO FILE · VITE AND ASTRO · QUIET PRODUCTION · HALYARD STUDIO FILE · </span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between gap-12 rounded-4 bg-black p-4 ring-1 ring-white/10 lg:hidden">
+            <a href="#top" class="text-white" aria-label="Home">
+              <svg viewBox="0 0 32 32" class="size-24" fill="currentColor"><rect x="2" y="2" width="2" height="28"/><rect x="8" y="6" width="2" height="20"/><rect x="14" y="2" width="2" height="28"/><rect x="20" y="8" width="2" height="16"/><rect x="26" y="4" width="2" height="24"/></svg>
+            </a>
+            <button data-menu type="button" class="font-mono text-caption-10 uppercase text-white" aria-expanded="false">Menu</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      data-menu-panel
+      data-open="0"
+      class="fixed inset-0 z-30 flex flex-col justify-end bg-black/95 p-24 text-white opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+    >
+      <a href="#features" class="font-mono text-caption-20 uppercase py-16 border-b border-white/10">Features</a>
+      <a href="#the-repo" class="font-mono text-caption-20 uppercase py-16 border-b border-white/10">The repo</a>
+      <a href="#showcase" class="font-mono text-caption-20 uppercase py-16 border-b border-white/10">Showcase</a>
+      <a href="#faq" class="font-mono text-caption-20 uppercase py-16">FAQ</a>
+    </div>
+
+    <button
+      type="button"
+      class="fixed top-16 right-16 z-40 hidden overflow-hidden rounded-4 bg-black/80 ring-1 ring-white/15 lg:block"
+      aria-label="Scroll via minimap"
+    >
+      <span class="pointer-events-none absolute inset-0 animate-minimap-scan bg-gradient-to-b from-accent/40 to-transparent"></span>
+      <canvas data-minimap width="72" height="48" class="block"></canvas>
+    </button>
+
+    <main id="top" class="relative z-10 flex flex-1 flex-col bg-black">
+      <!-- HERO -->
+      <section
+        data-section
+        class="relative grid min-h-svh grid-cols-1 grid-rows-[auto_minmax(70vh,1fr)] gap-x-16 bg-off-white text-black lg:grid-cols-12 lg:grid-rows-1"
+      >
+        <div class="flex flex-col gap-48 px-16 pt-160 pb-48 lg:col-span-5 lg:min-h-svh lg:pt-140 lg:pr-0 lg:pl-80">
+          <div class="pt-24">
+            <p class="mb-20 font-mono text-caption-20 uppercase">
+              <span data-reveal>Built for quiet production.</span>
+            </p>
+            <h1 class="mb-32 whitespace-pre-line text-balance font-medium text-headline-20">
+              <span data-reveal>The working<br />file agents<br />don't reinvent.</span>
+            </h1>
+            <div class="mb-40 w-full text-body-20 text-dark-grey">
+              <p data-reveal>Every run starts from a blank page. This file keeps the decisions you already made, so the next session builds on them instead of redrawing the map.</p>
+            </div>
+            <a
+              href="#showcase"
+              class="relative inline-flex w-fit min-w-0 shrink-0 cursor-pointer items-center justify-center whitespace-nowrap font-mono text-body-10 uppercase *:data-text:inline-flex *:data-text:h-48 *:data-text:items-center *:data-text:rounded-8 *:data-text:px-20 lg:*:data-text:px-24 *:data-text:bg-black *:data-connector:text-black *:data-text:text-white"
+            >
+              <span data-text="true"><span data-odometer>SEE</span></span>
+              <div aria-hidden="true" class="flex -mx-px w-6 flex-col" data-connector="true" style="height: 26px">
+                <div class="h-4 w-full shrink-0 bg-current" style="clip-path: path('M 0 0 H 1 C 1 1.1046 1.8954 2 3 2 C 4.1046 2 5 1.1046 5 0 H 6 V 4 H 0 Z')"></div>
+                <div class="-my-px w-full grow bg-current"></div>
+                <div class="h-4 w-full shrink-0 bg-current" style="clip-path: path('M 0 0 H 6 V 4 H 5 C 5 2.8954 4.1046 2 3 2 C 1.8954 2 1 2.8954 1 4 H 0 Z')"></div>
+              </div>
+              <span data-text="true">
+                <span data-odometer>THE WORK</span>
+              </span>
+            </a>
+          </div>
+          <div class="mt-auto hidden font-mono text-caption-10 uppercase lg:block">
+            <div class="flex flex-col gap-y-4">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-16 gap-y-4">
+                <span>NEXT 16.X</span>
+                <span>ASTRO 7.X</span>
+                <span>SANITY V6</span>
+                <span>TS: STRICT</span>
+              </div>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-16 gap-y-4">
+                <span>AGENTS.MD: LOADED</span>
+                <span>MCP: 2 SERVERS</span>
+                <span>DRIFT: 0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative h-[80vh] min-h-[420px] cursor-pointer overflow-hidden bg-black lg:col-span-6 lg:col-start-7 lg:h-auto lg:min-h-svh">
+          <canvas data-ascii-hero class="absolute inset-0 block size-full"></canvas>
+        </div>
+        <button
+          type="button"
+          data-next
+          aria-label="Scroll to the next section"
+          class="absolute bottom-40 left-[calc(50%_+_8px)] hidden h-auto -translate-x-1/2 cursor-pointer flex-col items-center rounded-4 bg-black-deep px-8 py-10 ring-1 ring-white/20 ring-inset transition-shadow hover:ring-white/40 lg:flex"
+        >
+          <span aria-hidden="true" class="relative block h-48 w-6 overflow-hidden" style="background-image: repeating-linear-gradient(rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.12) 1px, transparent 1px, transparent 8px)">
+            <span class="absolute inset-x-0 top-0 h-6 animate-hero-scroll-cue bg-white/90"></span>
+          </span>
+        </button>
+      </section>
+
+      <!-- TERMINAL -->
+      <section data-section class="bg-off-white py-72 text-black lg:py-160">
+        <div class="grid grid-cols-1 gap-48 px-16 lg:grid-cols-12 lg:gap-16 lg:px-80">
+          <div class="lg:col-span-5">
+            <div class="chrome-dot overflow-hidden rounded-8 p-6 shadow-lg ring ring-black-deep">
+              <div
+                data-terminal
+                data-lines='["Agent redesigns the folder tree overnight.","Page builder schema and section registry drift.","Published copy goes stale in the cache."]'
+                class="rounded-4 bg-black p-20 font-mono text-caption-20 text-white ring-1 ring-white/10"
+              >
+                <div class="mb-16 border-b border-white/10 pb-12 font-mono text-caption-10 uppercase tracking-wide text-white/45">
+                  Common problems
+                </div>
+                <div data-terminal-out class="min-h-160 space-y-10"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 lg:col-start-7">
+            <h2 class="mb-32 whitespace-pre-line text-balance font-medium text-headline-10">
+              <span data-reveal>The page builder<br />alone costs you days.<br />Every single time.</span>
+            </h2>
+            <p class="max-w-[42ch] text-body-20 text-dark-grey">
+              It is never the easy stuff that hurts. It is the builder modeled from scratch again. Draft mode and live preview, wired up and subtly broken again. The cache bug where published copy goes stale and the client swears you shipped something wrong.
+            </p>
+            <p class="mt-20 max-w-[42ch] text-body-20 text-black/70">
+              This is the part nobody quotes and everybody rebuilds. Days before the real work starts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" data-section data-dark="1" class="relative isolate min-h-svh bg-black pt-72 pb-64 text-white lg:py-160">
+        <div class="px-16 lg:px-80">
+          <h2 class="max-w-[16ch] whitespace-pre-line text-balance font-medium text-headline-10">
+            <span data-reveal>Every decision<br />already made.<br />So you can skip to<br />the actual work.</span>
+          </h2>
+          <p class="mt-40 max-w-[46ch] text-body-20 text-white/70">
+            The production foundation under the client work: hundreds of decisions, schema, fetching, structure, SEO, made once and committed. Clone it, rename it, ship. Committed decisions are also why agents work here: inside them a session ships, without them it redesigns.
+          </p>
+          <ul class="mt-80 grid grid-cols-1 gap-24 lg:grid-cols-3 lg:gap-16">
+            <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
+              <p class="font-mono text-caption-10 uppercase text-white/45">001 / Fetch</p>
+              <p class="mt-12 text-body-20">Revalidation, draft overlays, and typed queries already sitting in one folder.</p>
+            </li>
+            <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
+              <p class="font-mono text-caption-10 uppercase text-white/45">002 / Builder</p>
+              <p class="mt-12 text-body-20">Sections register themselves. New blocks do not require a new architecture.</p>
+            </li>
+            <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
+              <p class="font-mono text-caption-10 uppercase text-white/45">003 / Agents</p>
+              <p class="mt-12 text-body-20">AGENTS.md, skills, and MCP servers so a model lands in the same file you would.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- REPO -->
+      <section id="the-repo" data-section class="h-svh bg-off-white px-16 py-72 text-black lg:p-80">
+        <div data-ide class="chrome-dot flex h-full min-h-0 flex-col overflow-hidden rounded-8 p-6 shadow-lg ring ring-black-deep">
+          <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-4 bg-black text-white ring-1 ring-white/10">
+            <div class="flex items-center justify-between gap-16 border-b border-white/10 px-16 py-10 font-mono text-caption-10 uppercase">
+              <div class="flex gap-8">
+                <button type="button" class="rounded-4 bg-white/10 px-10 py-6">Next.js</button>
+                <button type="button" class="rounded-4 px-10 py-6 text-white/40">Astro</button>
+              </div>
+              <p class="hidden text-white/45 lg:block">This is the actual repo.</p>
+              <div class="flex gap-8 text-white/70">
+                <span class="rounded-4 bg-white/10 px-8 py-4">Ctrl J</span>
+                <span class="rounded-4 px-8 py-4">Ctrl K</span>
+              </div>
+            </div>
+            <div class="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-[220px_1fr]">
+              <nav class="hidden overflow-auto border-r border-white/10 p-16 font-mono text-caption-10 uppercase text-white/60 lg:block">
+                <button data-ide-file="agents" class="block w-full py-6 text-left hover:text-white">.AGENTS</button>
+                <button data-ide-file="readme" class="block w-full py-6 text-left text-white">README.MD</button>
+                <button data-ide-file="schema" class="block w-full py-6 text-left hover:text-white">SCHEMA.TS</button>
+                <span class="mt-8 block py-6 text-white/35">APP / (WEB)</span>
+                <span class="block py-6 text-white/35">LIB / CONTENT</span>
+                <span class="block py-6 text-white/35">SANITY-STUDIO</span>
+              </nav>
+              <div class="flex min-h-0 flex-col">
+                <p data-ide-title class="border-b border-white/10 px-16 py-10 font-mono text-caption-10 uppercase text-white/50">README.MD</p>
+                <div data-ide-code class="min-h-0 flex-1 overflow-auto p-16 font-mono text-caption-20 leading-relaxed text-white/85">
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">1</span><span class="text-[#9cdcfe]"># Halyard (working copy)</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">2</span><span>&nbsp;</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">3</span><span>A studio operating file. Clone it, rename it, ship from it.</span></div>
+                </div>
+                <div class="border-t border-white/10 px-16 py-12 font-mono text-caption-10 uppercase text-white/45">
+                  <span class="text-white/70">~/halyard</span>
+                  <span class="mx-8 text-accent">open</span>
+                  <span>README.md</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between border-t border-white/10 px-16 py-8 font-mono text-caption-10 uppercase text-white/40">
+              <span>main · <span class="text-accent">updated today</span></span>
+              <span>147 commits</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SHOWCASE -->
+      <section id="showcase" data-section data-dark="1" class="relative isolate overflow-hidden bg-black px-16 py-72 text-white lg:px-80 lg:py-160">
+        <canvas data-ascii-wall class="pointer-events-none absolute inset-0 size-full opacity-70" data-fg="light"></canvas>
+        <div class="relative">
+          <h2 class="whitespace-pre-line text-balance font-medium text-headline-20">
+            <span data-reveal>The work that gets remembered.</span>
+          </h2>
+          <p class="mt-24 max-w-[50ch] text-body-20 text-white/80">
+            Real rooms, shipped on a file that already held. With the plumbing handled, the effort goes where it shows: the thing a stranger remembers on Monday.
+          </p>
+          <div class="mt-64 grid grid-cols-1 gap-16 lg:grid-cols-2">
+            <article class="group relative overflow-hidden rounded-8 bg-black ring-1 ring-white/10">
+              <div data-ascii-photo class="relative aspect-[16/10] overflow-hidden bg-black">
+                <img src="/media/s1.jpg" alt="" class="size-full object-cover" />
+              </div>
+              <div class="flex items-center justify-between px-16 py-14 font-mono text-caption-10 uppercase text-white/55">
+                <span>North atrium / Oslo</span>
+                <span>2026</span>
+              </div>
+            </article>
+            <article class="group relative overflow-hidden rounded-8 bg-black ring-1 ring-white/10">
+              <div data-ascii-photo class="relative aspect-[16/10] overflow-hidden bg-black">
+                <img src="/media/s2.jpg" alt="" class="size-full object-cover" />
+              </div>
+              <div class="flex items-center justify-between px-16 py-14 font-mono text-caption-10 uppercase text-white/55">
+                <span>Ledger hall / Lisbon</span>
+                <span>2025</span>
+              </div>
+            </article>
+            <article class="group relative overflow-hidden rounded-8 bg-black ring-1 ring-white/10">
+              <div data-ascii-photo class="relative aspect-[16/10] overflow-hidden bg-black">
+                <img src="/media/s3.jpg" alt="" class="size-full object-cover" />
+              </div>
+              <div class="flex items-center justify-between px-16 py-14 font-mono text-caption-10 uppercase text-white/55">
+                <span>Quiet dock / Bergen</span>
+                <span>2025</span>
+              </div>
+            </article>
+            <article class="group relative overflow-hidden rounded-8 bg-black ring-1 ring-white/10">
+              <div data-ascii-photo class="relative aspect-[16/10] overflow-hidden bg-black">
+                <img src="/media/s4.jpg" alt="" class="size-full object-cover" />
+              </div>
+              <div class="flex items-center justify-between px-16 py-14 font-mono text-caption-10 uppercase text-white/55">
+                <span>Signal room / Kyoto</span>
+                <span>2024</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section id="reviews" data-section data-dark="1" class="relative isolate overflow-x-clip bg-black py-72 text-white lg:pb-160">
+        <div class="px-16 lg:px-80">
+          <p class="font-mono text-caption-10 uppercase text-white/45">Field notes</p>
+        </div>
+        <div data-carousel class="mt-32 flex snap-x snap-mandatory items-stretch gap-16 overflow-x-auto px-16 pb-8 lg:gap-16 lg:px-80">
+          <figure class="w-[min(80vw,420px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
+            <blockquote class="text-body-20 text-white/85">
+              We shipped the hall on an early copy and it saved a week. Six months in we still assemble pages in an afternoon without fighting the setup.
+            </blockquote>
+            <figcaption class="mt-24 font-mono text-caption-10 uppercase text-white/45">Jules K. — studio lead</figcaption>
+          </figure>
+          <figure class="w-[min(80vw,420px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
+            <blockquote class="text-body-20 text-white/85">
+              The fetch layer already had the revalidation hole I burned two days on last year. That one folder paid back the week.
+            </blockquote>
+            <figcaption class="mt-24 font-mono text-caption-10 uppercase text-white/45">Mira V. — engineer</figcaption>
+          </figure>
+          <figure class="w-[min(80vw,420px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
+            <blockquote class="text-body-20 text-white/85">
+              Plumbing was handled, so the week we usually lose to setup went into the work the client actually remembers.
+            </blockquote>
+            <figcaption class="mt-24 font-mono text-caption-10 uppercase text-white/45">Owen L. — director</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" data-section data-dark="1" class="relative isolate overflow-hidden bg-black px-16 py-72 text-white lg:px-80 lg:py-160">
+        <canvas data-ascii-wall class="pointer-events-none absolute inset-0 size-full opacity-60" data-fg="light"></canvas>
+        <div class="relative grid grid-cols-1 gap-48 lg:grid-cols-12">
+          <div class="lg:col-span-4">
+            <h2 class="font-medium text-headline-20"><span data-reveal>Notes</span></h2>
+          </div>
+          <div class="lg:col-span-8">
+            <div class="border-t border-white/15">
+              <button data-faq-btn type="button" aria-expanded="true" aria-controls="faq-1" class="group flex w-full cursor-pointer items-center justify-between gap-24 py-24 text-left font-mono text-caption-20 uppercase">
+                <span><span class="text-dark-grey">Q.001 /</span> What stack is this built on?</span>
+                <span class="relative grid size-24 shrink-0 place-items-center rounded-2 bg-white/10">
+                  <span class="h-px w-10 bg-current"></span>
+                  <span data-faq-plus class="absolute h-10 w-px bg-current" style="transform: rotate(90deg)"></span>
+                </span>
+              </button>
+              <div id="faq-1" class="grid" style="grid-template-rows: 1fr">
+                <div class="overflow-hidden">
+                  <p class="pb-24 text-body-20 text-white/80">
+                    Next.js with the App Router, or Astro 7. Both share a typed content layer, Tailwind 4, and a strict TypeScript surface. Pull what you do not want.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-white/15">
+              <button data-faq-btn type="button" aria-expanded="false" aria-controls="faq-2" class="group flex w-full cursor-pointer items-center justify-between gap-24 py-24 text-left font-mono text-caption-20 uppercase">
+                <span><span class="text-dark-grey">Q.002 /</span> Does it work with Claude Code and Cursor?</span>
+                <span class="relative grid size-24 shrink-0 place-items-center rounded-2 bg-white/10">
+                  <span class="h-px w-10 bg-current"></span>
+                  <span data-faq-plus class="absolute h-10 w-px bg-current" style="transform: rotate(0deg)"></span>
+                </span>
+              </button>
+              <div id="faq-2" class="grid" style="grid-template-rows: 0fr">
+                <div class="overflow-hidden">
+                  <p class="pb-24 text-body-20 text-white/80">
+                    Yes. Agents.md, skills, and two MCP servers are in the repo so a coding agent lands in the same conventions a human would. It will still guess; it guesses inside a decided file.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-white/15">
+              <button data-faq-btn type="button" aria-expanded="false" aria-controls="faq-3" class="group flex w-full cursor-pointer items-center justify-between gap-24 py-24 text-left font-mono text-caption-20 uppercase">
+                <span><span class="text-dark-grey">Q.003 /</span> Am I locked into this exact stack?</span>
+                <span class="relative grid size-24 shrink-0 place-items-center rounded-2 bg-white/10">
+                  <span class="h-px w-10 bg-current"></span>
+                  <span data-faq-plus class="absolute h-10 w-px bg-current" style="transform: rotate(0deg)"></span>
+                </span>
+              </button>
+              <div id="faq-3" class="grid" style="grid-template-rows: 0fr">
+                <div class="overflow-hidden">
+                  <p class="pb-24 text-body-20 text-white/80">
+                    No. Tailwind, Biome, Mux, Rive, Lottie — they are defaults, wired so they come out cleanly. Prefer ESLint? Swap it. No video? Drop it.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-white/15">
+              <button data-faq-btn type="button" aria-expanded="false" aria-controls="faq-4" class="group flex w-full cursor-pointer items-center justify-between gap-24 py-24 text-left font-mono text-caption-20 uppercase">
+                <span><span class="text-dark-grey">Q.004 /</span> Where does the work live?</span>
+                <span class="relative grid size-24 shrink-0 place-items-center rounded-2 bg-white/10">
+                  <span class="h-px w-10 bg-current"></span>
+                  <span data-faq-plus class="absolute h-10 w-px bg-current" style="transform: rotate(0deg)"></span>
+                </span>
+              </button>
+              <div id="faq-4" class="grid" style="grid-template-rows: 0fr">
+                <div class="overflow-hidden">
+                  <p class="pb-24 text-body-20 text-white/80">
+                    In the repo. Schema, fetch, sections, and agent notes stay committed so the next session does not redraw the map.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALLOUT -->
+      <section id="callout" data-section class="bg-off-white px-16 py-72 lg:p-80">
+        <h2 class="max-w-[18ch] whitespace-pre-line text-balance font-medium text-headline-20">
+          <span data-reveal>Not a starter you outgrow.<br />A file you keep.</span>
+        </h2>
+        <p class="mt-32 max-w-[46ch] text-body-20 text-black/70">
+          Six years of decisions, committed. The next thirty minutes are for renaming the folder, not inventing a tree.
+        </p>
+      </section>
+    </main>
+
+    <footer class="sticky bottom-0 z-0 overflow-hidden bg-black px-16 py-72 text-white lg:p-80">
+      <canvas data-ascii-wall class="pointer-events-none absolute inset-0 size-full opacity-50" data-fg="light"></canvas>
+      <div class="relative grid grid-cols-1 gap-48 lg:grid-cols-12">
+        <form class="flex flex-wrap items-center gap-8 lg:col-span-7" onsubmit="event.preventDefault()">
+          <input
+            type="email"
+            placeholder="your@email.com"
+            class="h-48 min-w-0 flex-1 rounded-8 border border-current/20 bg-transparent px-16 font-mono text-body-10 text-current outline-none transition-colors placeholder:text-current/40 focus:border-current/60"
+          />
+          <button type="submit" class="inline-flex h-48 items-center rounded-8 bg-ghost-grey px-20 font-mono text-body-10 uppercase text-black">
+            <span data-odometer>STAY</span>
+          </button>
+          <span class="inline-flex h-48 items-center rounded-8 bg-ghost-grey px-20 font-mono text-body-10 uppercase text-black">
+            <span data-odometer>UPDATED</span>
+          </span>
+        </form>
+        <ul class="space-y-10 text-right font-mono text-caption-20 uppercase lg:col-span-5">
+          <li><a class="hover:text-white/70" href="#callout">Notes</a></li>
+          <li><a class="hover:text-white/70" href="#the-repo">Roadmap</a></li>
+          <li><a class="hover:text-white/70" href="#showcase">Showcase</a></li>
+          <li><a class="hover:text-white/70" href="#faq">Privacy policy</a></li>
+          <li><a class="hover:text-white/70" href="#faq">Terms of service</a></li>
+          <li><a class="hover:text-white/70" href="#faq">Imprint</a></li>
+        </ul>
+        <p class="font-mono text-caption-10 uppercase text-white/45 lg:col-span-12">
+          © 2026 Halyard. Built as a study of a working file.
+        </p>
+      </div>
+    </footer>
+
+    <div class="pointer-events-none fixed right-16 bottom-16 z-40">
+      <button
+        data-learn
+        type="button"
+        class="pointer-events-auto inline-flex flex-col items-end font-mono text-caption-10 uppercase"
+      >
+        <span data-label="true" class="inline-flex h-22 items-center justify-center rounded-4 bg-ghost-grey px-8 text-black">
+          <span data-odometer>Learn more</span>
+        </span>
+        <span data-icon="true" class="inline-flex size-48 items-center justify-center rounded-4 bg-ghost-grey text-black">+</span>
+      </button>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
