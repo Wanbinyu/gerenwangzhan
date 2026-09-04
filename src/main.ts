@@ -17,10 +17,10 @@ import {
 } from "./ui";
 
 const WALL_COPY = `
-BUILT ON THIS WORKING FILE. SHIPPED ON REAL DEADLINES.
-KEEP THE DECISIONS THAT ALREADY HELD UP IN PRODUCTION.
-THE PAGE BUILDER ALONE COSTS YOU DAYS. EVERY DECISION ALREADY MADE.
-FROM STUDIO TO PRODUCTION THE DETAILS ARE THE PRODUCT.
+AI APPLICATIONS BUILT TO RUN. RETRIEVAL MEASURED.
+EVIDENCE INSPECTED. FAILURES EXPLAINED.
+FROM RAG PIPELINES TO PRODUCTION APIS. EVERY RESULT SHOULD BE VERIFIABLE.
+BUILD WITH MODELS. TEST WITH DATA. SHIP WITH CONFIDENCE.
 `.replace(/\s+/g, " ").trim();
 
 function boot() {
@@ -83,7 +83,7 @@ function boot() {
 
   const learn = document.querySelector("[data-learn]");
   learn?.addEventListener("click", () => {
-    const el = document.getElementById("features");
+    const el = document.getElementById("skills");
     if (el) lenis.scrollTo(el);
   });
 
