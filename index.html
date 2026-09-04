@@ -219,8 +219,8 @@
               <p class="mt-12 text-body-20">pytest、node:test、GitHub Actions、Docker、Nginx、PM2 与 Linux 部署排障。</p>
             </li>
             <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
-              <p class="font-mono text-caption-10 uppercase text-white/45">005 / AI-ASSISTED DEV</p>
-              <p class="mt-12 text-body-20">使用 Codex、DeepSeek、Grok、Kimi 完成拆解、实现、审查、回归和文档沉淀。</p>
+              <p class="font-mono text-caption-10 uppercase text-white/45">005 / AI DEVELOPER TOOLING</p>
+              <p class="mt-12 text-body-20">多代理编排、模型费用追踪、错误诊断、并发监测、本地启动工具，以及带权限边界和完成审计的 Agent 工作流。</p>
             </li>
             <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
               <p class="font-mono text-caption-10 uppercase text-white/45">006 / SERVER FUNDAMENTALS</p>
@@ -236,22 +236,22 @@
           <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-4 bg-black text-white ring-1 ring-white/10">
             <div class="flex items-center justify-between gap-16 border-b border-white/10 px-16 py-10 font-mono text-caption-10 uppercase">
               <div class="flex gap-8">
-                <span class="rounded-4 bg-white/10 px-10 py-6">Python</span>
-                <span class="rounded-4 px-10 py-6 text-white/40">LangChain</span>
+                <span class="rounded-4 bg-white/10 px-10 py-6">RAG LAB</span>
+                <a href="https://github.com/Wanbinyu/rag-langchain-lab#评测结果" target="_blank" rel="noreferrer" class="rounded-4 px-10 py-6 text-white/55 hover:bg-white/10 hover:text-white">Report ↗</a>
               </div>
               <p class="hidden text-white/45 lg:block">RAG LANGCHAIN LAB / LIVE PROJECT</p>
               <div class="flex gap-8 text-white/70">
                 <a href="https://github.com/Wanbinyu/rag-langchain-lab" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-8 py-4 hover:bg-white/20">GitHub ↗</a>
               </div>
             </div>
-            <div class="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-[220px_1fr]">
-              <nav class="hidden overflow-auto border-r border-white/10 p-16 font-mono text-caption-10 uppercase text-white/60 lg:block">
-                <button data-ide-file="readme" class="block w-full py-6 text-left text-white">README.MD</button>
-                <button data-ide-file="agents" class="block w-full py-6 text-left hover:text-white">EVALUATION.MD</button>
-                <button data-ide-file="schema" class="block w-full py-6 text-left hover:text-white">PIPELINE.PY</button>
-                <span class="mt-8 block py-6 text-white/35">APP / WEB CONSOLE</span>
-                <span class="block py-6 text-white/35">RAG / RETRIEVAL</span>
-                <span class="block py-6 text-white/35">TESTS / PYTEST</span>
+            <div class="grid min-h-0 flex-1 grid-cols-1 grid-rows-[auto_minmax(0,1fr)] lg:grid-cols-[220px_1fr] lg:grid-rows-1">
+              <nav aria-label="RAG project files" class="flex shrink-0 gap-16 overflow-x-auto border-b border-white/10 px-16 py-8 font-mono text-caption-10 uppercase text-white/60 lg:block lg:overflow-auto lg:border-r lg:border-b-0 lg:p-16">
+                <button data-ide-file="readme" class="block shrink-0 whitespace-nowrap py-6 text-left text-white lg:w-full">README.MD</button>
+                <button data-ide-file="agents" class="block shrink-0 whitespace-nowrap py-6 text-left hover:text-white lg:w-full">EVALUATION.MD</button>
+                <button data-ide-file="schema" class="block shrink-0 whitespace-nowrap py-6 text-left hover:text-white lg:w-full">PIPELINE.PY</button>
+                <span class="mt-8 hidden py-6 text-white/35 lg:block">APP / WEB CONSOLE</span>
+                <span class="hidden py-6 text-white/35 lg:block">RAG / RETRIEVAL</span>
+                <span class="hidden py-6 text-white/35 lg:block">TESTS / PYTEST</span>
               </nav>
               <div class="flex min-h-0 flex-col">
                 <p data-ide-title class="border-b border-white/10 px-16 py-10 font-mono text-caption-10 uppercase text-white/50">README.MD</p>
@@ -268,8 +268,8 @@
               </div>
             </div>
             <div class="flex items-center justify-between border-t border-white/10 px-16 py-8 font-mono text-caption-10 uppercase text-white/40">
-              <span>main · <span class="text-accent">47 tests + 11 subtests</span></span>
-              <span>Recall@3 84.62%</span>
+              <span>main · <span class="text-accent">CI passing</span></span>
+              <span>frozen test set</span>
             </div>
           </div>
         </div>
@@ -324,13 +324,15 @@
             </article>
             <article class="group flex min-h-320 flex-col overflow-hidden rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
               <div class="flex items-start justify-between gap-16 font-mono text-caption-10 uppercase text-white/45">
-                <span>04 / OPEN SOURCE & WRITING</span><span>CONTINUOUS</span>
+                <span>04 / OPEN SOURCE TOOLING</span><span>RELEASED</span>
               </div>
-              <h3 class="mt-32 text-headline-10">持续公开构建与复盘</h3>
-              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">GitHub 年度贡献约 314 次；DeepSeek Launcher 下载约 700；OpenRewrite PR 已合并；CSDN 发布 99 篇原创文章。</p>
+              <h3 class="mt-32 text-headline-10">DeepSeek Harness 工具生态</h3>
+              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">开发 Windows 启动器和 6 个可验证插件，覆盖安装管理、费用追踪、错误诊断、并发监测、供应商探测与只读 Git 工具；发行程序包近千次下载，并持续通过 CI。</p>
               <div class="mt-auto flex flex-wrap gap-8 pt-32 font-mono text-caption-10 uppercase">
-                <a href="https://github.com/Wanbinyu" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">GitHub ↗</a>
-                <a href="https://blog.csdn.net/qq_64669006" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">CSDN ↗</a>
+                <a href="https://github.com/Wanbinyu/dsh-launcher" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">Launcher ↗</a>
+                <a href="https://wanbinyu.github.io/wanbinyu-harness-toolbox/" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">Toolbox ↗</a>
+                <a href="https://github.com/Wanbinyu/multi-agent-orchestrator" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">MAO Beta ↗</a>
+                <a href="https://wanbinyu.github.io/openchoices/" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">OpenChoices ↗</a>
               </div>
             </article>
           </div>
@@ -344,14 +346,15 @@
         </div>
         <div data-carousel class="mt-32 flex snap-x snap-mandatory items-stretch gap-16 overflow-x-auto px-16 pb-8 lg:gap-16 lg:px-80">
           <article class="w-[min(84vw,440px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
-            <p class="font-mono text-caption-10 uppercase text-white/45">RAG / QUALITY</p>
-            <p class="mt-20 text-headline-10">60.00% → 84.62%</p>
-            <p class="mt-16 text-body-20 text-white/70">Recall@3 提升，Top-5 Recall 达到 89.23%，使用 85 / 150 题评测集与 holdout 控制调参偏差。</p>
+            <p class="font-mono text-caption-10 uppercase text-white/45">OPEN SOURCE / DELIVERY</p>
+            <p class="mt-20 text-headline-10">近千次程序包下载</p>
+            <p class="mt-16 text-body-20 text-white/70">dsh-launcher 提供 Windows 安装器、便携版与实验性 Android 客户端；发布资产可校验，最新 CI 持续通过。</p>
           </article>
           <article class="w-[min(84vw,440px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
-            <p class="font-mono text-caption-10 uppercase text-white/45">AI / USAGE</p>
-            <p class="mt-20 text-headline-10">63.69 亿 Tokens</p>
-            <p class="mt-16 text-body-20 text-white/70">累计 44,756 次多模型请求，其中 60.50 亿来自缓存或上下文复用，形成高频、可复盘的 AI 协作开发习惯。</p>
+            <p class="font-mono text-caption-10 uppercase text-white/45">UPSTREAM / CONTRIBUTIONS</p>
+            <p class="mt-20 text-headline-10">5 MERGED PRs</p>
+            <p class="mt-16 text-body-20 text-white/70">向 OpenRewrite 与 rewrite-github-actions 提交的 5 个修复或功能 PR 已合并，覆盖格式处理、Dependabot 配置与 Actions 迁移。</p>
+            <a href="https://github.com/search?q=author%3AWanbinyu+is%3Apr+is%3Amerged+-user%3AWanbinyu&amp;type=pullrequests" target="_blank" rel="noreferrer" class="mt-24 inline-block font-mono text-caption-10 uppercase text-white/55 hover:text-white">Merged records ↗</a>
           </article>
           <article class="w-[min(84vw,440px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
             <p class="font-mono text-caption-10 uppercase text-white/45">EDUCATION / 2021—2025</p>

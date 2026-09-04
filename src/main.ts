@@ -81,11 +81,28 @@ function boot() {
     if (img) mountImageAscii(wrap, img);
   });
 
-  const learn = document.querySelector("[data-learn]");
+  const learn = document.querySelector<HTMLElement>("[data-learn]");
   learn?.addEventListener("click", () => {
     const el = document.getElementById("skills");
     if (el) lenis.scrollTo(el);
   });
+
+  const heroSection = document.querySelector<HTMLElement>("main > section:first-of-type");
+  if (learn && heroSection) {
+    let learnVisible: boolean | undefined;
+    const updateLearnVisibility = () => {
+      const visible = heroSection.getBoundingClientRect().bottom > 0;
+      if (visible === learnVisible) return;
+      learnVisible = visible;
+      learn.style.opacity = visible ? "1" : "0";
+      learn.style.pointerEvents = visible ? "auto" : "none";
+      learn.style.transition = "opacity 200ms ease";
+      learn.tabIndex = visible ? 0 : -1;
+      learn.setAttribute("aria-hidden", visible ? "false" : "true");
+    };
+    updateLearnVisibility();
+    window.addEventListener("scroll", updateLearnVisibility, { passive: true });
+  }
 
   document.querySelector("[data-next]")?.addEventListener("click", () => {
     const el = document.querySelector("[data-section]:nth-of-type(2)");
