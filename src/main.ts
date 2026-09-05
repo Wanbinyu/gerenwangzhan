@@ -23,7 +23,7 @@ FROM RAG PIPELINES TO PRODUCTION APIS. EVERY RESULT SHOULD BE VERIFIABLE.
 BUILD WITH MODELS. TEST WITH DATA. SHIP WITH CONFIDENCE.
 `.replace(/\s+/g, " ").trim();
 
-const HERO_COPY = "AI 应用开发 · RAG 检索 · Python 后端 · 测试验证";
+const HERO_COPY = "AI 应用开发 · RAG 检索 · Python · Java · Spring Boot · MySQL · Redis";
 
 function boot() {
   const lenis = new Lenis({
