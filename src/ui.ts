@@ -211,8 +211,8 @@ export function mountIde() {
         "Evidence -> Rewrite / Answer / Refuse",
         "",
         "## Evaluation",
-        "Recall@3 60.00% -> 84.62% / MRR 0.5231 -> 0.7564",
-        "Refusal 20 / 20 / Tests 47 + 11 subtests",
+        "Recall@3 63 / 65 (96.92%) / MRR 0.9128",
+        "Evidence 82 / 85 / Tests 65 + 26 subtests",
       ],
     },
     agents: {
@@ -220,11 +220,12 @@ export function mountIde() {
       body: [
         "# Evaluation",
         "",
-        "Recall@3: 60.00% -> 84.62%",
-        "MRR:      0.5231 -> 0.7564",
-        "Top-5 Recall: 89.23%",
-        "Out-of-scope refusal: 20 / 20",
-        "pytest: 47 tests + 11 subtests",
+        "Recall@3: 63 / 65 (96.92%)",
+        "MRR: 0.9128",
+        "Evidence decisions: 82 / 85 (96.47%)",
+        "Frozen evidence: 24 / 30",
+        "P50: 1258.2ms -> 957.0ms (-24%)",
+        "pytest: 65 tests + 26 subtests",
       ],
     },
     schema: {

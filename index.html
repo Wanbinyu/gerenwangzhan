@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>万彬宇 — AI 应用开发工程师</title>
+    <title>万彬宇</title>
     <meta
       name="description"
-      content="万彬宇的个人主页：AI 应用开发、RAG 工程、Python、Java / Spring Boot、MySQL 与游戏服务端项目实践。"
+      content="万彬宇的个人主页：AI 应用开发、RAG 评测、Python / FastAPI、Java / Spring Boot 与游戏服务端项目实践。"
     />
     <link rel="icon" href="/mark.svg" type="image/svg+xml" />
   </head>
@@ -113,7 +113,7 @@
               <span data-reveal>把 AI 想法<br />做成真正可用的<br />应用。</span>
             </h1>
             <div class="mb-40 w-full text-body-20 text-dark-grey">
-              <p data-reveal>主要使用 Python、RAG 和大模型 API 开发 AI 应用，也有 Lua 游戏服务端经验，以及 Java / Spring Boot、MySQL / Redis 项目基础。重视功能实现与测试验证。</p>
+              <p data-reveal>主要使用 Python / FastAPI、RAG 和大模型 API 开发 AI 应用，也有 Lua 游戏服务端经验，以及 Java / Spring Boot、MySQL / Redis 项目基础。重视功能实现与测试验证。</p>
             </div>
             <a
               href="#projects"
@@ -133,14 +133,14 @@
           <div class="mt-auto hidden font-mono text-caption-10 uppercase lg:block">
             <div class="flex flex-col gap-y-4">
               <div class="flex flex-wrap items-baseline justify-between gap-x-16 gap-y-4">
-                <span>PYTHON · JAVA</span>
-                <span>RAG · SPRING BOOT</span>
+                <span>PYTHON · FASTAPI</span>
+                <span>RAG · LLM API</span>
+                <span>JAVA · SPRING BOOT</span>
                 <span>MYSQL · REDIS</span>
-                <span>NODE.JS · LUA</span>
               </div>
               <div class="flex flex-wrap items-baseline justify-between gap-x-16 gap-y-4">
-                <span>召回率@3：84.62%</span>
-                <span>自动化测试：47 + 27</span>
+                <span>召回率@3：96.92%</span>
+                <span>自动化测试：65 + 27</span>
                 <span>开源贡献：5 个 PR</span>
               </div>
             </div>
@@ -168,7 +168,7 @@
             <div class="chrome-dot overflow-hidden rounded-8 p-6 shadow-lg ring ring-black-deep">
               <div
                 data-terminal
-                data-lines='["Hybrid retrieval: Vector + BM25 + RRF.","Recall@3: 60.00% -> 84.62%.","Out-of-scope refusal: 20 / 20."]'
+                data-lines='["Hybrid retrieval: Vector + BM25 + RRF.","Recall@3: 63 / 65 (96.92%).","Evidence decisions: 82 / 85 (96.47%)."]'
                 class="rounded-4 bg-black p-20 font-mono text-caption-20 text-white ring-1 ring-white/10"
               >
                 <div class="mb-16 border-b border-white/10 pb-12 font-mono text-caption-10 uppercase tracking-wide text-white/45">
@@ -186,7 +186,7 @@
               我关注召回率、MRR、失败样本与越界问题。检索结果保留来源、分数和证据状态，让系统的正确与错误都可以被检查。
             </p>
             <p class="mt-20 max-w-[42ch] text-body-20 text-black/70">
-              85 题中英评测集上，Recall@3 从 60.00% 提升至 84.62%，MRR 从 0.5231 提升至 0.7564。
+              中英开发与校准集上，Recall@3 达到 63/65（96.92%），MRR 为 0.9128；综合证据决策达到 82/85（96.47%）。
             </p>
           </div>
         </div>
@@ -212,19 +212,19 @@
             </li>
             <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
               <p class="font-mono text-caption-10 uppercase text-white/45">003 / BACKEND & WEB</p>
-              <p class="mt-12 text-body-20">Python、Node.js/Express、Java / Spring Boot、TypeScript/JavaScript、Vue 3，以及 Lua 商业游戏服务端开发。</p>
+              <p class="mt-12 text-body-20">Python / FastAPI、Node.js / Express、Java / Spring Boot、TypeScript / JavaScript、Vue 3，以及 Lua 商业游戏服务端开发。</p>
             </li>
             <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
               <p class="font-mono text-caption-10 uppercase text-white/45">004 / TEST & DELIVERY</p>
               <p class="mt-12 text-body-20">pytest、node:test、Postman、Swagger、GitHub Actions 与 JMeter，覆盖接口验证、自动化测试和基础压测。</p>
             </li>
             <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
-              <p class="font-mono text-caption-10 uppercase text-white/45">005 / AI DEVELOPER TOOLING</p>
-              <p class="mt-12 text-body-20">多代理编排、模型费用追踪、错误诊断、并发监测、本地启动工具，以及带权限边界和完成审计的 Agent 工作流。</p>
+              <p class="font-mono text-caption-10 uppercase text-white/45">005 / AGENT & AI TOOLING</p>
+              <p class="mt-12 text-body-20">Tool Calling、参数校验、调用幂等、权限边界与超时重试；了解 MCP、ReAct，并持续使用多模型辅助开发、审查与测试。</p>
             </li>
             <li class="rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
               <p class="font-mono text-caption-10 uppercase text-white/45">006 / JAVA & DATA</p>
-              <p class="mt-12 text-body-20">Spring Cloud Gateway、MyBatis-Plus、MySQL、Redis、Kafka、Elasticsearch 与 MinIO 等项目实践。</p>
+              <p class="mt-12 text-body-20">MySQL / Redis 的事务、索引、锁与缓存更新；以及 Gateway、MyBatis-Plus、Kafka、Elasticsearch、MinIO 等项目实践。</p>
             </li>
           </ul>
         </div>
@@ -269,8 +269,8 @@
                   <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">11</span><span>Evidence -&gt; Rewrite / Answer / Refuse</span></div>
                   <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">12</span><span>&nbsp;</span></div>
                   <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">13</span><span class="text-[#9cdcfe]">## Evaluation</span></div>
-                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">14</span><span>Recall@3 60.00% -&gt; 84.62% / MRR 0.5231 -&gt; 0.7564</span></div>
-                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">15</span><span>Refusal 20 / 20 / Tests 47 + 11 subtests</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">14</span><span>Recall@3 63 / 65 (96.92%) / MRR 0.9128</span></div>
+                  <div class="flex gap-16"><span class="w-24 shrink-0 text-white/25">15</span><span>Evidence 82 / 85 / Tests 65 + 26 subtests</span></div>
                 </div>
                 <div class="border-t border-white/10 px-16 py-12 font-mono text-caption-10 uppercase text-white/45">
                   <span class="text-white/70">~/rag-langchain-lab</span>
@@ -303,11 +303,11 @@
                 <span>01 / RAG LANGCHAIN LAB</span><span>PYTHON</span>
               </div>
               <h3 class="mt-32 text-headline-10">混合检索与可验证评测</h3>
-              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">稳定分块 ID、增量索引、向量与 BM25 召回、RRF 融合、多语 Cross-Encoder 重排，以及证据评分、Query Rewrite 与受控拒答。</p>
+              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">稳定分块 ID、增量索引、多路召回与 RRF 融合、多语 Cross-Encoder 重排，以及证据分级、Query Rewrite、受控拒答与冻结集验证。</p>
               <div class="mt-auto flex flex-wrap gap-8 pt-32 font-mono text-caption-10 uppercase">
-                <span class="rounded-4 bg-white/10 px-10 py-6">Recall@3 84.62%</span>
-                <span class="rounded-4 bg-white/10 px-10 py-6">MRR 0.7564</span>
-                <span class="rounded-4 bg-white/10 px-10 py-6">Refusal 20/20</span>
+                <span class="rounded-4 bg-white/10 px-10 py-6">Recall@3 96.92%</span>
+                <span class="rounded-4 bg-white/10 px-10 py-6">MRR 0.9128</span>
+                <span class="rounded-4 bg-white/10 px-10 py-6">Evidence 82/85</span>
               </div>
             </article>
             <article class="group flex min-h-320 flex-col overflow-hidden rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
@@ -339,7 +339,7 @@
                 <span>04 / OPEN SOURCE TOOLING</span><span>RELEASED</span>
               </div>
               <h3 class="mt-32 text-headline-10">DeepSeek Harness 工具生态</h3>
-              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">开发 Windows 启动器和 6 个可验证插件，覆盖安装管理、费用追踪、错误诊断、并发监测、供应商探测与只读 Git 工具；发行程序包近千次下载，并持续通过 CI。</p>
+              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">独立维护 DeepSeek Harness Windows 启动器并开发 6 个可验证插件，覆盖安装管理、费用追踪、错误诊断、并发监测、供应商探测与只读 Git 工具；11 个 Release 累计近千次下载。</p>
               <div class="mt-auto flex flex-wrap gap-8 pt-32 font-mono text-caption-10 uppercase">
                 <a href="https://github.com/Wanbinyu/dsh-launcher" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">Launcher ↗</a>
                 <a href="https://wanbinyu.github.io/wanbinyu-harness-toolbox/" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">Toolbox ↗</a>
@@ -360,7 +360,7 @@
           <article class="w-[min(84vw,440px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
             <p class="font-mono text-caption-10 uppercase text-white/45">OPEN SOURCE / DELIVERY</p>
             <p class="mt-20 text-headline-10">近千次程序包下载</p>
-            <p class="mt-16 text-body-20 text-white/70">dsh-launcher 提供 Windows 安装器、便携版与实验性 Android 客户端；发布资产可校验，最新 CI 持续通过。</p>
+            <p class="mt-16 text-body-20 text-white/70">dsh-launcher 已发布 11 个 Release，提供 Windows 安装器、便携版与实验性 Android 客户端；发布资产可校验，最新 CI 持续通过。</p>
           </article>
           <article class="w-[min(84vw,440px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
             <p class="font-mono text-caption-10 uppercase text-white/45">UPSTREAM / CONTRIBUTIONS</p>
@@ -492,7 +492,7 @@
       <canvas data-ascii-wall class="pointer-events-none absolute inset-0 size-full opacity-50" data-fg="light"></canvas>
       <div class="relative grid grid-cols-1 gap-48 lg:grid-cols-12">
         <div class="lg:col-span-7">
-          <p class="font-mono text-caption-10 uppercase text-white/45">万彬宇 / AI APPLICATION DEVELOPER</p>
+          <p class="font-mono text-caption-10 uppercase text-white/45">万彬宇</p>
           <a href="mailto:wanbinyu18@163.com" class="mt-16 inline-block text-headline-10 hover:text-white/70">wanbinyu18@163.com</a>
           <p class="mt-16 max-w-[42ch] text-body-20 text-white/60">RAG · LLM API · Python / Java Backend · Spring Boot · MySQL</p>
         </div>
@@ -500,7 +500,7 @@
           <li><a class="hover:text-white/70" href="#projects">Projects</a></li>
           <li><a class="hover:text-white/70" href="#experience">Experience</a></li>
           <li><a class="hover:text-white/70" href="https://github.com/Wanbinyu" target="_blank" rel="noreferrer">GitHub ↗</a></li>
-          <li><a class="hover:text-white/70" href="https://blog.csdn.net/qq_64669006" target="_blank" rel="noreferrer">CSDN ↗</a></li>
+          <li><a class="hover:text-white/70" href="https://blog.csdn.net/qq_64669006" target="_blank" rel="noreferrer">CSDN · 99 篇原创 ↗</a></li>
           <li><a class="hover:text-white/70" href="https://jianli.wanbinxy.icu" target="_blank" rel="noreferrer">Resume Fit AI ↗</a></li>
         </ul>
         <p class="font-mono text-caption-10 uppercase text-white/45 lg:col-span-12">
