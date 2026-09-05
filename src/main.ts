@@ -23,6 +23,8 @@ FROM RAG PIPELINES TO PRODUCTION APIS. EVERY RESULT SHOULD BE VERIFIABLE.
 BUILD WITH MODELS. TEST WITH DATA. SHIP WITH CONFIDENCE.
 `.replace(/\s+/g, " ").trim();
 
+const HERO_COPY = "AI 应用开发 · RAG 检索 · Python 后端 · 测试验证";
+
 function boot() {
   const lenis = new Lenis({
     lerp: 0.12,
@@ -70,7 +72,7 @@ function boot() {
   });
 
   const hero = document.querySelector<HTMLCanvasElement>("[data-ascii-hero]");
-  if (hero) mountHeroSpiral(hero, "", WALL_COPY);
+  if (hero) mountHeroSpiral(hero, "", HERO_COPY);
 
   document.querySelectorAll<HTMLCanvasElement>("[data-ascii-wall]").forEach((c) => {
     mountStaticWall(c, c.dataset.phrase || WALL_COPY, "#6a665e", "#232323");
