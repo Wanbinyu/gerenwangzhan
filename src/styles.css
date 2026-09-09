@@ -68,7 +68,7 @@
     calc(var(--spacing) * 18)
   );
   --text-body-20--font-weight: 400;
-  --text-body-20--line-height: 1.25;
+  --text-body-20--line-height: 1.6;
 
   --text-body-30: clamp(
     calc(var(--spacing) * 16),
