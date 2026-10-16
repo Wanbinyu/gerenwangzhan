@@ -144,7 +144,7 @@
               <div class="flex flex-wrap items-baseline justify-between gap-x-16 gap-y-4">
                 <span>RAG · 单 Agent 多步检索</span>
                 <span>持久化任务 · 故障恢复</span>
-                <span>开源贡献：9 个 PR 已合并</span>
+                <span>开源贡献：10 个 PR 已合并</span>
               </div>
             </div>
           </div>
@@ -241,7 +241,7 @@
             <span data-reveal>精选项目。<br />从实现到验证。</span>
           </h2>
           <p class="mt-24 max-w-[50ch] text-body-20 text-white/80">
-            围绕文档检索、简历诊断与开发工具完成项目实践。可通过项目代码、评测报告和在线产品进一步了解。
+            围绕文档检索、简历优化、开发工具与轻量内容产品完成项目实践。可通过项目代码、评测报告和在线产品进一步了解。
           </p>
           <div class="mt-64 grid grid-cols-1 gap-16 lg:grid-cols-2">
             <article class="group flex min-h-320 flex-col overflow-hidden rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
@@ -263,11 +263,12 @@
                 <span>02 / RESUME FIT AI</span><span>ONLINE</span>
               </div>
               <h3 class="mt-32 text-headline-10">简历与岗位 JD 定向优化器</h3>
-              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">独立开发并部署，支持简历解析、JD 分析、在线编辑与 DOCX/PDF 导出。持久化队列协调多 Worker，结合幂等键、Task Token、超时回收和重启恢复管理任务，区分任务取消与上游请求中止。</p>
+              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">线上 Node.js / Express 版支持简历解析、JD 分析、编辑与导出。公开仓库已扩展 Java 21 / Spring Boot 3 后端，包含 JWT 鉴权、简历版本管理和有界 Agent 分析；Java 后端暂未部署到当前服务器。</p>
               <div class="mt-auto flex flex-wrap items-center gap-8 pt-32 font-mono text-caption-10 uppercase">
-                <span class="rounded-4 bg-white/10 px-10 py-6">持久化任务 · 多 Worker</span>
+                <span class="rounded-4 bg-white/10 px-10 py-6">版本管理 · Agent 分析</span>
                 <span class="rounded-4 bg-white/10 px-10 py-6">NODE.JS / EXPRESS</span>
                 <a href="https://jianli.wanbinxy.icu" target="_blank" rel="noreferrer" class="rounded-4 bg-white px-10 py-6 text-black hover:bg-white/80">在线体验 ↗</a>
+                <a href="https://github.com/Wanbinyu/resume-fit-ai" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">项目源码 ↗</a>
               </div>
             </article>
 
@@ -276,7 +277,7 @@
                 <span>03 / OPEN SOURCE TOOLING</span><span>RELEASED</span>
               </div>
               <h3 class="mt-32 text-headline-10">DeepSeek Harness 工具生态</h3>
-              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">独立维护 DeepSeek Harness Windows 启动器，实现依赖检查、后台启动、托盘管理、脱敏诊断及重复启动请求合并，并维护配套插件。dsh-launcher 获得 16 个 GitHub Star，Release 附件累计下载 1,349 次（截至 2026-09-11）。</p>
+              <p class="mt-20 max-w-[48ch] text-body-20 text-white/70">独立维护 DeepSeek Harness Windows 启动器，实现依赖检查、后台启动、托盘管理、脱敏诊断及重复启动请求合并，并维护配套插件。dsh-launcher 获得 15 个 GitHub Star，Release 附件累计下载 2,388 次（截至 2026-10-16）。</p>
               <div class="mt-auto flex flex-wrap gap-8 pt-32 font-mono text-caption-10 uppercase">
                 <a href="https://github.com/Wanbinyu/dsh-launcher" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">启动器 ↗</a>
                 <a href="https://wanbinyu.github.io/wanbinyu-harness-toolbox/" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">插件工具箱 ↗</a>
@@ -293,9 +294,28 @@
                 <a href="https://gitee.com/wan-binyu/Community-communication" target="_blank" rel="noopener noreferrer" class="rounded-4 bg-white px-10 py-6 text-black hover:bg-white/80">项目源码 · Gitee ↗</a>
               </div>
             </article>
+            <article class="flex min-h-320 flex-col rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
+              <p class="font-mono text-caption-10 text-white/45">05 / PAWCARD LITE · 已上线</p>
+              <h3 class="mt-32 text-headline-10">宠物身份卡</h3>
+              <p class="mt-20 text-body-20 text-white/70">上传宠物照片，选择模板并预览身份卡，生成分享图与打印级 PDF；二维码关联宠物公开档案。使用 Python / FastAPI 与 SQLite，提供游客体验、账户和作品管理。</p>
+              <div class="mt-auto pt-32 font-mono text-caption-10">
+                <a href="https://pawcard.wanbinxy.icu/" target="_blank" rel="noreferrer" class="inline-block rounded-4 bg-white px-10 py-6 text-black hover:bg-white/80">在线体验 ↗</a>
+              </div>
+            </article>
+            <article class="flex min-h-320 flex-col rounded-8 bg-white/5 p-24 ring-1 ring-white/10">
+              <p class="font-mono text-caption-10 text-white/45">06 / CITY CONTENT DESK · 已上线</p>
+              <h3 class="mt-32 text-headline-10">城市内容台</h3>
+              <p class="mt-20 text-body-20 text-white/70">导入标题与表格，按目标城市整理内容，生成表格页面、竖屏视频和文案。支持人工修改与审核，示例数据明确标记；原视频链接仅作记录，不自动下载原片。</p>
+              <div class="mt-auto flex flex-wrap gap-8 pt-32 font-mono text-caption-10">
+                <a href="https://citydesk.wanbinxy.icu/" target="_blank" rel="noreferrer" class="rounded-4 bg-white px-10 py-6 text-black hover:bg-white/80">在线体验 ↗</a>
+                <a href="https://github.com/Wanbinyu/city-content-desk" target="_blank" rel="noreferrer" class="rounded-4 bg-white/10 px-10 py-6 hover:bg-white/20">项目源码 ↗</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
+
+      <div class="bg-black px-16 pb-32 text-white/70 lg:px-80"><p class="text-body-20">近期本地工具：<a href="https://github.com/Wanbinyu/ShotDesk" target="_blank" rel="noreferrer" class="underline underline-offset-4 hover:text-white">ShotDesk 分镜成片台 ↗</a> · 剧本拆镜、素材管理、视频合成与剪映草稿导出。</p></div>
 
       <details class="rag-details bg-off-white px-16 py-32 text-black lg:px-80">
         <summary class="cursor-pointer py-16 text-body-20">展开 RAG 技术详情：检索流程与评测结果</summary>
@@ -383,8 +403,8 @@
         <div data-carousel class="mt-32 flex snap-x snap-mandatory items-stretch gap-16 overflow-x-auto px-16 pb-8 lg:gap-16 lg:px-80">
           <article class="w-[min(84vw,440px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
             <p class="font-mono text-caption-10 uppercase text-white/45">OPEN SOURCE / DELIVERY</p>
-            <p class="mt-20 text-headline-10">16 个 GitHub Star</p>
-            <p class="mt-16 text-body-20 text-white/70">dsh-launcher 已发布 13 个 Release，附件累计下载 1,349 次；提供 Windows 启动与托盘管理工具。统计截至 2026-09-11，下载数为 Release 附件下载次数。</p>
+            <p class="mt-20 text-headline-10">15 个 GitHub Star</p>
+            <p class="mt-16 text-body-20 text-white/70">dsh-launcher 已发布 14 个 Release，附件累计下载 2,388 次；提供 Windows 启动与托盘管理工具。统计截至 2026-10-16，下载数为 Release 附件下载次数。</p>
           </article>
           <article id="ai-usage" class="w-[min(84vw,440px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
             <p class="font-mono text-caption-10 uppercase text-white/45">AI ENGINEERING / 真实用量</p>
@@ -393,9 +413,10 @@
           </article>
           <article class="w-[min(84vw,440px)] shrink-0 snap-start rounded-8 bg-white/5 p-32 ring-1 ring-white/10">
             <p class="font-mono text-caption-10 uppercase text-white/45">UPSTREAM / CONTRIBUTIONS</p>
-            <p class="mt-20 text-headline-10">9 个 PR 已合并</p>
-            <p class="mt-16 text-body-20 text-white/70">Spring Boot 已合并 #51386、#51470、#51661。OpenRewrite 已合并 6 个 PR，包括 XML 缩进、Groovy 许可证头，以及 GitHub Actions 的 merge group 和 Dependabot recipe。统计截至 2026-09-30。</p>
+            <p class="mt-20 text-headline-10">10 个 PR 已合并</p>
+            <p class="mt-16 text-body-20 text-white/70">Spring Boot 已合并 3 个 PR，OpenRewrite 相关仓库已合并 6 个 PR；新增 Gradle #39348，为构建操作跟踪增加目录选项，避免跟踪文件被覆盖。统计截至 2026-10-16。</p>
             <a href="https://github.com/spring-projects/spring-boot/pulls?q=is%3Apr+is%3Amerged+author%3AWanbinyu" target="_blank" rel="noreferrer" class="mt-24 mr-16 inline-block font-mono text-caption-10 text-white/70 hover:text-white">Spring Boot PR ↗</a>
+            <a href="https://github.com/gradle/gradle/pull/39348" target="_blank" rel="noreferrer" class="mt-24 mr-16 inline-block font-mono text-caption-10 text-white/70 hover:text-white">Gradle PR ↗</a>
             <a href="https://github.com/search?q=author%3AWanbinyu+is%3Apr+is%3Amerged+-user%3AWanbinyu&amp;type=pullrequests" target="_blank" rel="noreferrer" class="mt-24 inline-block font-mono text-caption-10 uppercase text-white/55 hover:text-white">查看合并记录 ↗</a>
           </article>
 
