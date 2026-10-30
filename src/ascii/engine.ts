@@ -144,7 +144,7 @@ void main(){
 }
 `;
 
-function tex(gl: WebGL2RenderingContext, img: TexImageSource, filter = gl.NEAREST) {
+function tex(gl: WebGL2RenderingContext, img: TexImageSource, filter: number = gl.NEAREST) {
   const t = gl.createTexture();
   if (!t) throw new Error("tex");
   gl.bindTexture(gl.TEXTURE_2D, t);

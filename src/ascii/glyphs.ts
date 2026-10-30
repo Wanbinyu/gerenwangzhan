@@ -41,11 +41,11 @@ function coverDraw(
 ) {
   const iw =
     "naturalWidth" in img
-      ? (img as HTMLImageElement).naturalWidth || (img as HTMLCanvasElement).width
+      ? img.naturalWidth || img.width
       : (img as HTMLCanvasElement).width;
   const ih =
     "naturalHeight" in img
-      ? (img as HTMLImageElement).naturalHeight || (img as HTMLCanvasElement).height
+      ? img.naturalHeight || img.height
       : (img as HTMLCanvasElement).height;
   if (!iw || !ih) {
     ctx.drawImage(img, 0, 0, dw, dh);

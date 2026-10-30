@@ -4,6 +4,29 @@
 @import "@fontsource/geist-mono/300.css";
 @import "@fontsource/geist-mono/400.css";
 
+.project-card {
+  scroll-margin-top: 8rem;
+  background: #292929;
+}
+
+.project-facts {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.project-facts dt {
+  margin-bottom: 0.45rem;
+  font-size: 0.78em;
+  letter-spacing: 0.08em;
+  color: #d0b288;
+}
+
+.project-facts dd {
+  margin: 0;
+  color: rgb(255 255 255 / 0.76);
+  overflow-wrap: anywhere;
+}
+
 @theme {
   --font-sans: "Geist Sans", ui-sans-serif, system-ui, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
@@ -277,3 +300,26 @@ html[data-theme="dark"] body,
     zoom: 1;
   }
 }
+
+/* Keep optional project details readable without expanding every card. */
+.project-details summary {
+  cursor: pointer;
+  color: #e1c6a3;
+  padding-block: 0.65rem;
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+}
+.project-details summary:hover { color: #fff; }
+.project-details summary:focus-visible {
+  outline: 2px solid #e1c6a3;
+  outline-offset: 4px;
+}
+.project-details p { overflow-wrap: anywhere; }
+.project-card > h3 { overflow-wrap: anywhere; line-height: 1.2; }
+
+.approach-facts { display: grid; gap: 1.25rem; }
+.approach-facts > div {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgb(35 35 35 / 0.15);
+}
+.approach-facts dt { margin-bottom: 0.5rem; font-weight: 500; }
+.approach-facts dd { margin: 0; color: var(--color-dark-grey); }

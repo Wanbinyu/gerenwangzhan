@@ -167,7 +167,7 @@ export function mountTerminal() {
       num.textContent = String(i + 1).padStart(3, "0");
       const draft = document.createElement("span");
       draft.className = "text-white";
-      draft.textContent = "Draft ";
+      draft.textContent = host.dataset.status || "持续迭代中";
       const cur = document.createElement("span");
       cur.className = "inline-block w-8 h-[1em] translate-y-[0.15em] bg-white animate-cursor-blink";
       row.append(num, draft, cur);
@@ -200,7 +200,7 @@ export function mountIde() {
       body: [
         "# RAG LangChain Lab",
         "",
-        "Verifiable local RAG with inspectable evidence.",
+        "本地资料问答，检索证据与失败原因可检查。",
         "",
         "## Stack",
         "Python / LangChain / ChromaDB / BM25 / RRF / Cross-Encoder",
@@ -211,21 +211,21 @@ export function mountIde() {
         "Evidence -> Rewrite / Answer / Refuse",
         "",
         "## Evaluation",
-        "历史开发/校准集：Recall@3 63 / 65 (96.92%) / MRR 0.9128",
-        "历史开发/校准集：证据决策 82 / 85；冻结集另行评估。",
+        "原基线冻结集：首次证据决策 24 / 30",
+        "评测结果限于特定样本；详见 EVALUATION.MD。",
       ],
     },
     agents: {
       title: "EVALUATION.MD",
       body: [
-        "# Evaluation",
+        "# 特定样本评测记录",
         "",
         "原基线冻结集：首次证据决策 24 / 30，保留失败样本，未据此调参。",
         "MultiHop-RAG 外部挑战集：609 篇文档 / 75 个可回答题。",
         "固定检索基线：任一证据命中 72 / 75；全部证据命中 33 / 75。",
         "第二领域：5 篇文档 / 22 题，本机重排候选池 18 -> 6。",
         "检索 P50 下降约 24%，Recall@3、MRR 与证据决策不变。",
-        "计时不含答案生成，含冷启动样本；回归接入 GitHub Actions。",
+        "计时不含答案生成，含冷启动样本；不代表通用准确率或生产吞吐。",
       ],
     },
     schema: {
